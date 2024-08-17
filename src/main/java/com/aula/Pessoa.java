@@ -5,11 +5,13 @@ import java.time.format.DateTimeFormatter;
 
 public abstract class Pessoa
 {
-    public Pessoa(String nome, LocalDate nascimento, Endereco endereco)
+    public class EnderecoKey { private EnderecoKey() {} }
+
+    public Pessoa(String nome, LocalDate nascimento, String nomeDaRua, Integer numero, String bairro, String cidade, String estado, String cep)
     {
         this.nome = nome;
         this.nascimento = nascimento;
-        this.endereco = endereco;
+        this.endereco = new Endereco(new EnderecoKey(), nomeDaRua, numero, bairro, cidade, estado, cep);
     }
 
     public String getNome() { return nome; }

@@ -1,11 +1,14 @@
 package com.aula;
 
+import java.util.Objects;
+
 import com.aula.utils.DocumentFormatter;
 
 final class Endereco
 {
-    public Endereco(String nomeDaRua, Integer numero, String bairro, String cidade, String estado, String cep)
+    public Endereco(Pessoa.EnderecoKey key, String nomeDaRua, Integer numero, String bairro, String cidade, String estado, String cep)
     {
+        Objects.requireNonNull(key);
         this.nomeDaRua = nomeDaRua;
         this.numero = numero;
         this.bairro = bairro;
