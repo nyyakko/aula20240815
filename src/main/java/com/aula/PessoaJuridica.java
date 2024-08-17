@@ -30,7 +30,7 @@ public class PessoaJuridica extends Pessoa
 
     @Override public boolean equals(Object object)
     {
-        if (object == null || !(object instanceof PessoaFisica) || !super.equals(object)) return false;
+        if (object == null || !(object instanceof PessoaJuridica) || !super.equals(object)) return false;
         if (this == object) return true;
 
         var that = (PessoaJuridica)object;
