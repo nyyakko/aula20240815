@@ -1,14 +1,13 @@
-package com.aula;
+package com.aula.entities;
 
 import java.time.LocalDate;
-
 import com.aula.utils.DocumentFormatter;
 
 public class PessoaJuridica extends Pessoa
 {
-    public PessoaJuridica(String cnpj, String nomeFantasia, String nome, LocalDate nascimento, Endereco endereco)
+    public PessoaJuridica(String cnpj, String nome, String nomeFantasia, LocalDate nascimento, String nomeDaRua, Integer numero, String bairro, String cidade, String estado, String cep)
     {
-        super(nome, nascimento, endereco);
+        super(nome, nascimento, nomeDaRua, numero, bairro, cidade, estado, cep);
         this.nomeFantasia = nomeFantasia;
         this.cnpj = cnpj;
     }
@@ -21,8 +20,8 @@ public class PessoaJuridica extends Pessoa
 
     @Override public String toString()
     {
-        return "PessoaJuridica {" +
-            "Pessoa (super): " + super.toString() + ", " +
+        return "{" +
+            "super: " + super.toString() + ", " +
             "nomeFantasia: " + this.nomeFantasia + ", " +
             "cpnj: " + DocumentFormatter.formatCnpj(this.cnpj) +
         "}";
@@ -30,7 +29,7 @@ public class PessoaJuridica extends Pessoa
 
     @Override public boolean equals(Object object)
     {
-        if (object == null || !(object instanceof PessoaFisica) || !super.equals(object)) return false;
+        if (object == null || !(object instanceof PessoaJuridica) || !super.equals(object)) return false;
         if (this == object) return true;
 
         var that = (PessoaJuridica)object;

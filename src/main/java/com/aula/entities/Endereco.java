@@ -1,10 +1,10 @@
-package com.aula;
+package com.aula.entities;
 
 import com.aula.utils.DocumentFormatter;
 
 final class Endereco
 {
-    public Endereco(String nomeDaRua, Integer numero, String bairro, String cidade, String estado, String cep)
+    Endereco(String nomeDaRua, Integer numero, String bairro, String cidade, String estado, String cep)
     {
         this.nomeDaRua = nomeDaRua;
         this.numero = numero;
@@ -34,7 +34,7 @@ final class Endereco
 
     @Override public String toString()
     {
-        return "Endereco {" +
+        return "{" +
             "nomeDaRua: " + this.nomeDaRua + ", " +
             "numero: " + this.numero + ", " +
             "bairro: " + this.bairro + ", " +
