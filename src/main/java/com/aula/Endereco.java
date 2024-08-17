@@ -4,6 +4,16 @@ import com.aula.utils.DocumentFormatter;
 
 final class Endereco
 {
+    public Endereco(String nomeDaRua, Integer numero, String bairro, String cidade, String estado, String cep)
+    {
+        this.nomeDaRua = nomeDaRua;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+    }
+
     public String getNomeDaRua() { return nomeDaRua; }
     public void setNomeDaRua(String nomeDaRua) { this.nomeDaRua = nomeDaRua; }
 
