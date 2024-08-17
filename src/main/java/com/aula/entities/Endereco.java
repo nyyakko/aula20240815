@@ -1,10 +1,10 @@
-package com.aula;
+package com.aula.entities;
 
 import com.aula.utils.DocumentFormatter;
 
-final class Endereco
+public final class Endereco
 {
-    public Endereco(String nomeDaRua, Integer numero, String bairro, String cidade, String estado, String cep)
+    protected Endereco(String nomeDaRua, Integer numero, String bairro, String cidade, String estado, String cep)
     {
         this.nomeDaRua = nomeDaRua;
         this.numero = numero;
