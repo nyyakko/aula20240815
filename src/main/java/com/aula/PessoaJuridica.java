@@ -6,7 +6,7 @@ import com.aula.utils.DocumentFormatter;
 
 public class PessoaJuridica extends Pessoa
 {
-    public PessoaJuridica(String nomeFantasia, String cnpj, String nome, LocalDate nascimento, Endereco endereco)
+    public PessoaJuridica(String cnpj, String nomeFantasia, String nome, LocalDate nascimento, Endereco endereco)
     {
         super(nome, nascimento, endereco);
         this.nomeFantasia = nomeFantasia;
