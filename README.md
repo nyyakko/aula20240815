@@ -1,6 +1,3 @@
-# Composição maluca
-é cada uma viu (verificar os branchs)
+# Método 6
+Método Romu-, quero dizer, function composition.
 
-## ∀, Building & Running
-> mvn package\
-> java -jar target/aula20240815.jar

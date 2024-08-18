@@ -6,9 +6,9 @@ import com.aula.utils.DocumentFormatter;
 
 public class PessoaFisica extends Pessoa
 {
-    public PessoaFisica(String cpf, String nome, LocalDate nascimento, Endereco endereco)
+    public PessoaFisica(String cpf, String nome, LocalDate nascimento)
     {
-        super(nome, nascimento, endereco);
+        super(nome, nascimento);
         this.cpf = cpf;
     }
 

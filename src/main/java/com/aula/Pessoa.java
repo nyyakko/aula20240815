@@ -1,49 +1,55 @@
 package com.aula;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-public abstract class Pessoa
+public abstract class Pessoa extends PessoaBase
 {
-    public Pessoa(String nome, LocalDate nascimento, Endereco endereco)
+    public static class EnderecoKey { private EnderecoKey() {} }
+
+    public Pessoa(String nome, LocalDate nascimento)
     {
-        this.nome = nome;
-        this.nascimento = nascimento;
-        this.endereco = endereco;
+        super(nome, nascimento);
     }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-
-    public LocalDate getNascimento() { return nascimento; }
-    public void setNascimento(LocalDate nascimento) { this.nascimento = nascimento; }
-
-    public Endereco getEndereco() { return endereco; }
-    public void setEndereco(Endereco endereco) { this.endereco = endereco; }
-
-    @Override public String toString()
+    public Pessoa withEndereco()
     {
-        return "Pessoa {" +
-            "nome: " + this.nome + ", " +
-            "nascimento: " + this.nascimento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + ", " +
-            "endereco: " + this.endereco +
-        "}";
+        this.endereco = new Endereco(new EnderecoKey());
+        return this;
     }
 
-    @Override public boolean equals(Object object)
+    public Pessoa withNomeDaRua(String nomeDaRua)
     {
-        if ((object == null) || !(object instanceof Pessoa)) return false;
-        if (this == object) return true;
-
-        var that = (Pessoa)object;
-
-        return
-            this.nome.equals(that.nome) &&
-            this.nascimento.equals(that.nascimento) &&
-            this.endereco.equals(that.endereco);
+        this.endereco.setNomeDaRua(nomeDaRua);
+        return this;
     }
 
-    protected String nome;
-    protected LocalDate nascimento;
-    protected Endereco endereco;
+    public Pessoa withNumero(Integer numero)
+    {
+        this.endereco.setNumero(numero);
+        return this;
+    }
+
+    public Pessoa withBairro(String bairro)
+    {
+        this.endereco.setBairro(bairro);
+        return this;
+    }
+
+    public Pessoa withCidade(String bairro)
+    {
+        this.endereco.setCidade(bairro);
+        return this;
+    }
+
+    public Pessoa withEstado(String estado)
+    {
+        this.endereco.setEstado(estado);
+        return this;
+    }
+
+    public Pessoa withCep(String cep)
+    {
+        this.endereco.setCep(cep);
+        return this;
+    }
 }
